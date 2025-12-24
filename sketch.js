@@ -20,12 +20,13 @@ function setup() {
    vy: bubble_size * 0, //change later for mouse hovering for now its 0
    r: random(0, 255),
    g: random(0,255),
-   b: random(0,255) };
+   b: random(0,255)
+   };
    
    bubbles.push(bubble); 
    console.log(bubble.vx, bubble.vy);  // What do you think this will show?
            
-  }
+                          }
                 }
 
 
@@ -40,13 +41,15 @@ function setup() {
     //update bubble position based on forces applied 
     fill (bubbles[i].r,bubbles[i].g, bubbles[i].b);
     circle(bubbles[i].x, bubbles[i].y, bubbles[i].bubble_size);
-      // I want to have the bubbles re appear on the left side after leaving the screen on the right
-
-     if(bubbles[i].x + bubbles[i].bubble_size/2 > width){
-      bubbles[i].x = respawn_x;
-     }
-    
+      // Re evaluate equation its perfect 
+      //CANVASES OPERATE LIKE THIS
+      //X AXIS 1000(defined in create canvas) --> positive
+      // Y AXIS 0 (top) - 500 (defined in create canvas) V positive  
+     if(bubbles[i].x - bubbles[i].bubble_size/2 > width) {
+      bubbles[i].x = respawn_x; 
     }
+    
+                                          }
 
 
                   }
@@ -56,3 +59,4 @@ function setup() {
 //respecitvely
   //}
 
+  
